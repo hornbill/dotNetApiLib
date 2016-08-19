@@ -2,6 +2,10 @@
  Hornbill .NET / C# API Lib
 ========
 
+Integration
+===
+Various Hornbill Integration methods are documeted here: https://wiki.hornbill.com/index.php/Integration
+
 DLL
 ===
 
