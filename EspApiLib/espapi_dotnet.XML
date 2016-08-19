@@ -1,0 +1,583 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>espapi_dotnet</name>
+    </assembly>
+    <members>
+        <member name="T:Hornbill.XmlmcEncoding">
+            <summary>
+            Represents a character encoding.
+            </summary>
+        </member>
+        <member name="F:Hornbill.XmlmcEncoding.ASCII">
+            <summary>
+            Encoding for the ASCII (7-bit) character set.
+            </summary>
+        </member>
+        <member name="F:Hornbill.XmlmcEncoding.Base64">
+            <summary>
+            Encoding for the Base64 format.
+            </summary>
+        </member>
+        <member name="T:Hornbill.XmlmcParam">
+            <summary>
+            XmlmcParam class.
+            </summary>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String)">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String,System.Collections.Generic.List{Hornbill.XmlmcParam})">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="inParams">The value of the parameter.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String,Hornbill.XmlmcParam)">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="inParam">The value of the parameter.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String,System.Single)">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String,System.Int64)">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String,System.Double)">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String,System.Int32)">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String,System.Boolean)">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.#ctor(System.String,System.DateTime)">
+            <summary>
+            Creates a new XmlmcParam.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+        </member>
+        <member name="P:Hornbill.XmlmcParam.Name">
+            <summary>
+            Gets or Sets the name of the parameter
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcParam.Value">
+            <summary>
+            Gets or Sets the value of the parameter
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcParam.Encoding">
+            <summary>
+            Gets the encoding of the parameter
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcParam.IsInCData">
+            <summary>
+            Returns true if the parameter is in CDATA block
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcParam.Children">
+            <summary>
+            Gets or Sets the parameter list
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcParam.ChildrentCount">
+            <summary>
+            Gets the count of the parameters
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcParam.XmlValue">
+            <summary>
+            Gets the XML value of the parameters
+            </summary>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.inCData(System.Boolean)">
+            <summary>
+            Create a CDATA block for the parameters.
+            </summary>
+            <param name="putInCDataBlock"><b>True</b> to put the parameters in a CDATA block</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.EncodeValue(Hornbill.XmlmcEncoding)">
+            <summary>
+            Encodes the value of the parameter.
+            </summary>
+            <param name="encoding">The encoding for the parameters (Currently only supports Base64)</param>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.DecodeValue">
+            <summary>
+            Decodes the value of the parameter.
+            </summary>
+            <returns>The value of the parameter.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.Add(System.String,System.String)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.Add(System.String,System.Boolean)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.Add(System.String,System.DateTime)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.Add(System.String,System.Double)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.Add(System.String,System.Single)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.Add(System.String,System.Int64)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.Add(System.String,System.Int32)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.InsertAt(System.Int32,System.String,System.String)">
+            <summary>
+            Inserts an parameter at a specified index.
+            </summary>
+            <param name="index">An integer index of the paramater.</param>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.InsertAt(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Inserts an parameter at a specified index.
+            </summary>
+            <param name="index">An integer index of the paramater.</param>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.InsertAt(System.Int32,System.String,System.Int64)">
+            <summary>
+            Inserts an parameter at a specified index.
+            </summary>
+            <param name="index">An integer index of the paramater.</param>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.InsertAt(System.Int32,System.String,System.Single)">
+            <summary>
+            Inserts an parameter at a specified index.
+            </summary>
+            <param name="index">An integer index of the paramater.</param>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.Insert(System.Int32,System.String,System.Double)">
+            <summary>
+            Inserts an parameter at a specified index.
+            </summary>
+            <param name="index">An integer index of the paramater.</param>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.InsertAt(System.Int32,System.String,System.Int32)">
+            <summary>
+            Inserts an parameter at a specified index.
+            </summary>
+            <param name="index">An integer index of the paramater.</param>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcParam.InsertAt(System.Int32,System.String,System.DateTime)">
+            <summary>
+            Inserts an parameter at a specified index.
+            </summary>
+            <param name="index">An integer index of the paramater.</param>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="T:Hornbill.XmlmcService">
+            <summary>
+            Provides a high level abstraction for communication with the Hornbill server.s
+            </summary>
+        </member>
+        <member name="M:Hornbill.XmlmcService.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates an XmlmcService object.
+            </summary>
+            <param name="instanceOrURL">The instance name or the server URL.</param>
+            <param name="serviceEntryPoint">The XMLMC entry point.</param>
+            <param name="webDavEntryPoint">Tthe WebDav entry point.</param>
+            <param name="apiKey">The API key.</param>
+        </member>
+        <member name="P:Hornbill.XmlmcService.ServerURL">
+            <summary>
+            Gets the URL of the server.
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcService.InstanceName">
+            <summary>
+            Gets or Sets the name of the instance
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcService.ServiceEntryPoint">
+            <summary>
+            Gets or Sets the service entry point.
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcService.WebDavEntryPoint">
+            <summary>
+            Gets or Sets the WebDav entry point.
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcService.APIKey">
+            <summary>
+            Gets or sets the API key.
+            </summary>
+        </member>
+        <member name="P:Hornbill.XmlmcService.Params">
+            <summary>
+            Gets or sets the list of the parameters.
+            </summary>
+        </member>
+        <member name="M:Hornbill.XmlmcService.convertToXmlNode(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.Collections.Generic.List{Hornbill.XmlmcParam})">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="inParams">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,Hornbill.XmlmcParam)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="inParam">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.String)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.Object)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParamIdList``1(System.String,System.Collections.Generic.List{``0})">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="idList">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.Int32)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.Int64)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.Single)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.Double)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.DateTime)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.Boolean)">
+            <summary>
+            Add parameters to the XMLMC method call.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The XMLMC parameter object.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.ClearParams">
+            <summary>
+            Clear all the parameters.
+            </summary>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetInvokeXML(System.String,System.String)">
+            <summary>
+            Returns the XML that will be sent to the server.
+            </summary>
+            <param name="service">Service to be invoked</param>
+            <param name="method">Method to be invoked</param>
+            <returns>The XML that will be sent to the server</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetParamsXML">
+            <summary>
+            Returns the XML of the current parameters
+            </summary>
+            <returns>The XML of the current parameters</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.DoesFileExists(System.String)">
+            <summary>
+            Check if the file or directory exists.
+            </summary>
+            <param name="path">The path of the file or directory.</param>
+            <returns>Return true if exists, otherwise false.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.MoveFile(System.String,System.String)">
+            <summary>
+            Moves an existing file or folder, including its children. The file or folder will be ovewritten if already exists.
+            </summary>
+            <param name="srcPath">The name of an existing file or directory.</param>
+            <param name="destPath">The new name of the file or directory.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcService.CopyFile(System.String,System.String)">
+            <summary>
+            Copies an existing file to a new file. The file will be overwritten if already exists.
+            </summary>
+            <param name="srcPath">The name of an existing file or directory.</param>
+            <param name="destPath">The new name of the file or directory.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcService.RemoveFile(System.String)">
+            <summary>
+            Deletes an existing file
+            </summary>
+            <param name="filePath">The path of the file to be removed</param>
+        </member>
+        <member name="M:Hornbill.XmlmcService.PutFile(System.String,System.String)">
+            <summary>
+            Uploads a file to the server. The file on the server will be overwritten if already exists.
+            </summary>
+            <param name="sourceFile">The path of an existing local file.</param>
+            <param name="destFile">The path of the new file on the server.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcService.PutText(System.String,System.String)">
+            <summary>
+            Uploads a text file to the server.
+            </summary>
+            <param name="path">The path of the file.</param>
+            <param name="contents">The contents of the file. It can be plain text or other formatted text.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcService.CreateFolder(System.String)">
+            <summary>
+            Creates a new folder.
+            </summary>
+            <param name="path">The path of the folder to be created.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcService.Invoke(System.String,System.String)">
+            <summary>
+            Invokes an API call. 
+            </summary>
+            <param name="service">The name of the service.</param>
+            <param name="method">The name of the method.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetResponseParamAsString(System.String)">
+            <summary>
+            Gets the value using a XPath expression.
+            </summary>s
+            <param name="path">A String that contains an XPath expression.</param>
+            <returns>The value from the specified path.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetResponseParamAsBool(System.String)">
+            <summary>
+            Gets the value using a XPath expression.
+            </summary>s
+            <param name="path">A String that contains an XPath expression.</param>
+            <returns>The value from the specified path.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetResponseParamAsNumber(System.String)">
+            <summary>
+            Gets the value using a XPath expression.
+            </summary>s
+            <param name="path">A String that contains an XPath expression.</param>
+            <returns>The value from the specified path.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetResponseParamAsTime(System.String)">
+            <summary>
+            Gets the value using a XPath expression.
+            </summary>s
+            <param name="path">A String that contains an XPath expression.</param>
+            <returns>The value from the specified path.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetResponseParamCount(System.String)">
+            <summary>
+            Gets the value using a XPath expression.
+            </summary>s
+            <param name="path">A String that contains an XPath expression.</param>
+            <returns>The value from the specified path.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetResponseParamAsStringArray(System.String)">
+            <summary>
+            Gets the value using a XPath expression.
+            </summary>s
+            <param name="path">A String that contains an XPath expression.</param>
+            <returns>The value from the specified path.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetResponseParamAsComplexType(System.String,System.Int32)">
+            <summary>
+            Gets the value using a XPath expression.
+            </summary>
+            <param name="path">A String that contains an XPath expression.</param>
+            <param name="nodePosition">The position of the node.</param>
+            <returns>The XML document from the specified path.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetResponseXMLDocument">
+            <summary>
+            Gets the XML document from the last response.
+            </summary>
+            <returns>The XML document from the last response.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetResponseXML">
+            <summary>
+            Gets the XML formatted string from the last response.
+            </summary>
+            <returns>XML formatted string from the last response.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetLastResponseErrorMessage">
+            <summary>
+            Gets the error message from the last response. 
+            </summary>
+            <returns>The error message from the last response.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetFileContents(System.String)">
+            <summary>
+            Downloads a text file from the server.
+            </summary>
+            <param name="path">The path of the file.</param>
+            <returns>The contents of the file.</returns>
+        </member>
+        <member name="M:Hornbill.XmlmcService.GetFile(System.String,System.IO.MemoryStream@)">
+            <summary>
+            Downloads a file from the server.
+            </summary>
+            <param name="path">The path of the file.</param>
+            <param name="memoryStream">The contents of the file.</param>
+        </member>
+        <member name="M:Hornbill.XmlmcService.ResolveInstanceName(System.String)">
+            <summary>
+            Resolves the server address from the instance name
+            </summary>
+            <param name="instanceName">The name of the instance.</param>
+            <returns>The server address.</returns>
+        </member>
+    </members>
+</doc>
