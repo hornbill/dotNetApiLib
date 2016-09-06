@@ -56,7 +56,7 @@ Example C# Application
 ===
 
 An Example C# Application has been provided here:
-http://gitlab1.internal.hornbill.com/trevork/csharpApiLib/tree/master/CSharpExample
+https://github.com/hornbill/dotNetApiLib/blob/master/CSharpExample
 
 Functionality Includes
 * Login
@@ -67,7 +67,7 @@ Functionality Includes
 
 The following file needs to be updated to include your instance details:
 
-http://gitlab1.internal.hornbill.com/trevork/csharpApiLib/blob/master/CSharpExample/MainWindow.xaml.cs
+https://github.com/hornbill/dotNetApiLib/blob/master/CSharpExample/MainWindow.xaml.cs
 
 
 These strings need to be updated:
