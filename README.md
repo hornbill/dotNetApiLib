@@ -10,7 +10,7 @@ DLL
 ===
 
 ```
-espapi_dotnet.dll can be found here: http://gitlab1.internal.hornbill.com/trevork/csharpApiLib/tree/master/EspApiLib
+espapi_dotnet.dll can be found here: https://github.com/hornbill/dotNetApiLib/blob/master/EspApiLib/espapi_dotnet.dll
 ```
 
 
