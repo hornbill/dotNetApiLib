@@ -8,6 +8,7 @@ Various Hornbill Integration methods are documeted here: https://wiki.hornbill.c
 
 DLL
 ===
+espapi_dotnet.dll Only supports .Net Framework v4.0 and above.
 
 ```
 espapi_dotnet.dll can be found here: https://github.com/hornbill/dotNetApiLib/blob/master/EspApiLib/espapi_dotnet.dll
