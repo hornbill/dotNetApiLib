@@ -17,7 +17,7 @@ namespace CSharpExample
         private readonly string serviceEntryPoint = "xmlmc";
         private readonly string davEntryPoint = "dav";
         private readonly bool shouldLogoff = false;
-        private readonly string apiKey = "9a9fd8d30d8f479c9f6f9806d71f93b4";
+        private readonly string apiKey = "";
         private int rowStart = 0;
         private int rowLimit = 3;
         private XmlmcService xmlmc;
