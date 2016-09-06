@@ -11,9 +11,9 @@ namespace CSharpExample
     public partial class MainWindow : Window
     {
         #region Fields
-        private readonly string instanceName = "bdickinsondemo";
+        private readonly string instanceName = "";
         private readonly string userId = "admin";
-        private readonly string password = "H0rnbill";
+        private readonly string password = "";
         private readonly string serviceEntryPoint = "xmlmc";
         private readonly string davEntryPoint = "dav";
         private readonly bool shouldLogoff = false;
