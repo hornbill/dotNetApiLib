@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6CF9171A-3373-4F26-B4DD-E5F161E35BB1}"
+	ProjectSection(SolutionItems) = preProject
+		espapi_dotnet.vsmdi = espapi_dotnet.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "espapi_dotnet", "espapi_dotnet\espapi_dotnet.csproj", "{F41F8BB9-C355-40DB-ABAA-3F7B2134D0B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_espapi_dotnet", "test_espapi_dotnet\test_espapi_dotnet.csproj", "{22217CB7-5EC1-4B1B-8F65-BCD7BDA0FF4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F41F8BB9-C355-40DB-ABAA-3F7B2134D0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41F8BB9-C355-40DB-ABAA-3F7B2134D0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41F8BB9-C355-40DB-ABAA-3F7B2134D0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41F8BB9-C355-40DB-ABAA-3F7B2134D0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22217CB7-5EC1-4B1B-8F65-BCD7BDA0FF4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22217CB7-5EC1-4B1B-8F65-BCD7BDA0FF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22217CB7-5EC1-4B1B-8F65-BCD7BDA0FF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22217CB7-5EC1-4B1B-8F65-BCD7BDA0FF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = espapi_dotnet.vsmdi
+	EndGlobalSection
+EndGlobal
