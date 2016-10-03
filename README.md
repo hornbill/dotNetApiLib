@@ -6,12 +6,12 @@ Integration
 ===
 Various Hornbill Integration methods are documeted here: https://wiki.hornbill.com/index.php/Integration
 
-DLL
+DLLs
 ===
 espapi_dotnet.dll Only supports .Net Framework v4.0 and above.
 
 ```
-espapi_dotnet.dll can be found here: https://github.com/hornbill/dotNetApiLib/blob/master/EspApiLib/espapi_dotnet.dll
+The DLLs can be found here: https://github.com/hornbill/dotNetApiLib/tree/master/EspApiLib/espapi_dotnet/bin/Release
 ```
 
 
