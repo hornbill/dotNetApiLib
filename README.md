@@ -78,3 +78,13 @@ private readonly string userId = ""; //-- UserName
 private readonly string password = ""; //-- Password
 private readonly string apiKey = ""; //-- API Key
 ```
+
+Potential Errors
+===
+
+When using the included test tool, go to:
+```
+Project > Add Reference > Browse 
+
+Then search for the DLL just downloaded and add it to the project. 
+```
