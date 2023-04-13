@@ -262,7 +262,7 @@ namespace Hornbill
                     }
                     if (v == null)
                     {
-                        xml = string.Format("<{0} nil=\"true\"/>", stringHelper.PrepareForXml(_name));
+                        xml = string.Format("<{0} xs:nil=\"true\"/>", stringHelper.PrepareForXml(_name));
                     }
                     else
                     {
