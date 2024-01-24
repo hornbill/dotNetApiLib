@@ -14,8 +14,8 @@ namespace test_espapi_dotnet
     public class UnitTest1
     {
         // instance name or full server URL
-        private string instanceUrl = "MyInstance"; // Or, i.e "http://localhost/sw/";
-        private const string userId = "testUser";
+        private string instanceUrl = "jordandev2"; // Or, i.e "http://localhost/sw/";
+        private const string userId = "admin";
         private const string password = "password";
         private const string xmlmc = "xmlmc";
         private const string dav = "dav";

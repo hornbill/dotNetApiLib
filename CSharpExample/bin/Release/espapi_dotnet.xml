@@ -4,6 +4,27 @@
         <name>espapi_dotnet</name>
     </assembly>
     <members>
+        <member name="T:Hornbill.RequestFailureException">
+            <summary>
+            The exception that is thrown when an error occurs while accessing the network through a pluggable protocol.
+            </summary>
+        </member>
+        <member name="M:Hornbill.RequestFailureException.#ctor">
+            <summary>Initializes a new instance of the RequestFailureException class.</summary> 
+        </member>
+        <member name="M:Hornbill.RequestFailureException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the System.Net.WebException class with the specified error message.
+            </summary>
+            <param name="message">The text of the error message.</param>
+        </member>
+        <member name="M:Hornbill.RequestFailureException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the RequestFailureException class with the specified error message and nested exception.
+            </summary>
+            <param name="message">The text of the error message.</param>
+            <param name="inner">A nested exception.</param>
+        </member>
         <member name="T:Hornbill.XmlmcEncoding">
             <summary>
             Represents a character encoding.
@@ -272,7 +293,7 @@
         </member>
         <member name="T:Hornbill.XmlmcService">
             <summary>
-            Provides a high level abstraction for communication with the Hornbill server.s
+            Provides a high level abstraction for communication with the Hornbill server
             </summary>
         </member>
         <member name="M:Hornbill.XmlmcService.#ctor(System.String,System.String,System.String,System.String)">
@@ -314,9 +335,17 @@
             Gets or sets the list of the parameters.
             </summary>
         </member>
-        <member name="M:Hornbill.XmlmcService.convertToXmlNode(System.String,System.String)">
+        <member name="M:Hornbill.XmlmcService.checkStatusCode(System.String)">
             <summary>
             
+            </summary>
+            <param name="xmlResponse"></param>
+            <returns>True if success, otherwise false</returns>
+            <exception cref="T:System.Xml.XmlException">Throw if the XML is not valid.</exception>
+        </member>
+        <member name="M:Hornbill.XmlmcService.convertToXmlNode(System.String,System.String)">
+            <summary>
+            Prepare string for XML
             </summary>
             <param name="name"></param>
             <param name="data"></param>
@@ -346,14 +375,6 @@
             <returns>The XMLMC parameter object.</returns>
         </member>
         <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.String)">
-            <summary>
-            Add parameters to the XMLMC method call.
-            </summary>
-            <param name="name">The name of the parameter.</param>
-            <param name="value">The value of the parameter.</param>
-            <returns>The XMLMC parameter object.</returns>
-        </member>
-        <member name="M:Hornbill.XmlmcService.AddParam(System.String,System.Object)">
             <summary>
             Add parameters to the XMLMC method call.
             </summary>
@@ -429,6 +450,7 @@
             <param name="service">Service to be invoked</param>
             <param name="method">Method to be invoked</param>
             <returns>The XML that will be sent to the server</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetParamsXML">
             <summary>
@@ -436,12 +458,35 @@
             </summary>
             <returns>The XML of the current parameters</returns>
         </member>
+        <member name="M:Hornbill.XmlmcService.PropFind(System.String)">
+            <summary>
+            PropFind
+            </summary>
+            <param name="path"></param>
+            <returns>The string contains the file/folder info.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
+        </member>
+        <member name="M:Hornbill.XmlmcService.PropGet(System.String)">
+            <summary>
+            PropGet
+            </summary>
+            <param name="path"></param>
+            <returns>Return MemoryStream</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
+        </member>
         <member name="M:Hornbill.XmlmcService.DoesFileExists(System.String)">
             <summary>
             Check if the file or directory exists.
             </summary>
             <param name="path">The path of the file or directory.</param>
             <returns>Return true if exists, otherwise false.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
+        </member>
+        <member name="M:Hornbill.XmlmcService.fileOperation(System.String,System.String,System.String,System.Boolean)">
+            <summary>FileOperation</summary>
         </member>
         <member name="M:Hornbill.XmlmcService.MoveFile(System.String,System.String)">
             <summary>
@@ -449,6 +494,8 @@
             </summary>
             <param name="srcPath">The name of an existing file or directory.</param>
             <param name="destPath">The new name of the file or directory.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.CopyFile(System.String,System.String)">
             <summary>
@@ -456,12 +503,16 @@
             </summary>
             <param name="srcPath">The name of an existing file or directory.</param>
             <param name="destPath">The new name of the file or directory.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.RemoveFile(System.String)">
             <summary>
             Deletes an existing file
             </summary>
             <param name="filePath">The path of the file to be removed</param>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.PutFile(System.String,System.String)">
             <summary>
@@ -469,6 +520,10 @@
             </summary>
             <param name="sourceFile">The path of an existing local file.</param>
             <param name="destFile">The path of the new file on the server.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">Throw if unable to locate the source file.</exception>
+            <exception cref="T:System.IO.IOException">Throw if not able to open the source file.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.PutText(System.String,System.String)">
             <summary>
@@ -476,12 +531,16 @@
             </summary>
             <param name="path">The path of the file.</param>
             <param name="contents">The contents of the file. It can be plain text or other formatted text.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.CreateFolder(System.String)">
             <summary>
             Creates a new folder.
             </summary>
             <param name="path">The path of the folder to be created.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.Invoke(System.String,System.String)">
             <summary>
@@ -489,6 +548,26 @@
             </summary>
             <param name="service">The name of the service.</param>
             <param name="method">The name of the method.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
+        </member>
+        <member name="M:Hornbill.XmlmcService.request(System.Uri)">
+            <summary>
+            Send a request to the server
+            </summary>
+            <param name="uri">The uri of the request.</param>
+            <returns>The response from the server.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
+        </member>
+        <member name="M:Hornbill.XmlmcService.validateGetParams(System.String)">
+            <summary>
+            Validate parameter path
+            </summary>
+            <param name="path"></param>
+            <returns>True if valid otherwise false.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Throw if the last response XML is null.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetResponseParamAsString(System.String)">
             <summary>
@@ -496,6 +575,8 @@
             </summary>s
             <param name="path">A String that contains an XPath expression.</param>
             <returns>The value from the specified path.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Throw if the last response XML is null.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetResponseParamAsBool(System.String)">
             <summary>
@@ -503,6 +584,8 @@
             </summary>s
             <param name="path">A String that contains an XPath expression.</param>
             <returns>The value from the specified path.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Throw if the last response XML is null.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetResponseParamAsNumber(System.String)">
             <summary>
@@ -510,6 +593,8 @@
             </summary>s
             <param name="path">A String that contains an XPath expression.</param>
             <returns>The value from the specified path.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Throw if the last response XML is null.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetResponseParamAsTime(System.String)">
             <summary>
@@ -517,6 +602,8 @@
             </summary>s
             <param name="path">A String that contains an XPath expression.</param>
             <returns>The value from the specified path.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Throw if the last response XML is null.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetResponseParamCount(System.String)">
             <summary>
@@ -524,6 +611,8 @@
             </summary>s
             <param name="path">A String that contains an XPath expression.</param>
             <returns>The value from the specified path.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Throw if the last response XML is null.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetResponseParamAsStringArray(System.String)">
             <summary>
@@ -531,6 +620,8 @@
             </summary>s
             <param name="path">A String that contains an XPath expression.</param>
             <returns>The value from the specified path.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Throw if the last response XML is null.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetResponseParamAsComplexType(System.String,System.Int32)">
             <summary>
@@ -539,6 +630,8 @@
             <param name="path">A String that contains an XPath expression.</param>
             <param name="nodePosition">The position of the node.</param>
             <returns>The XML document from the specified path.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Throw if the last response XML is null.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetResponseXMLDocument">
             <summary>
@@ -564,6 +657,7 @@
             </summary>
             <param name="path">The path of the file.</param>
             <returns>The contents of the file.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.GetFile(System.String,System.IO.MemoryStream@)">
             <summary>
@@ -571,6 +665,7 @@
             </summary>
             <param name="path">The path of the file.</param>
             <param name="memoryStream">The contents of the file.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
         </member>
         <member name="M:Hornbill.XmlmcService.ResolveInstanceName(System.String)">
             <summary>
@@ -578,6 +673,9 @@
             </summary>
             <param name="instanceName">The name of the instance.</param>
             <returns>The server address.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when the argument is not valid.</exception>
+            <exception cref="T:System.UriFormatException">Throw when the URI format is not valid.</exception>
+            <exception cref="T:System.Net.WebException">Throw when the request has failed.</exception>
         </member>
     </members>
 </doc>

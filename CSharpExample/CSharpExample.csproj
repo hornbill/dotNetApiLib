@@ -37,10 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="espapi_dotnet">
-      <HintPath>..\EspApiLib\espapi_dotnet.dll</HintPath>
+      <HintPath>..\EspApiLib\espapi_dotnet\bin\Release\espapi_dotnet.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\EspApiLib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\EspApiLib\espapi_dotnet\bin\Release\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

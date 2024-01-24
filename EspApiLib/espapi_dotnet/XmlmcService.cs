@@ -1409,8 +1409,22 @@ namespace Hornbill
                 return new Uri(instanceName);
             }
 
-            string jsonString = request(new Uri(string.Format("https://files.hornbill.com/instances/{0}/zoneinfo", instanceName)));
-            if (string.IsNullOrWhiteSpace(jsonString))
+            string jsonString;
+            try
+            {
+                jsonString = request(new Uri(string.Format("https://files.hornbill.com/instances/{0}/zoneinfo", instanceName)));
+            } catch (Exception) {
+                try
+                {
+                    //This is the backup URL incase the file.hornbill.com server is done
+                    jsonString = request(new Uri(string.Format("https://files.hornbill.co/instances/{0}/zoneinfo", instanceName)));
+                } catch (Exception backupError)
+                {
+                    throw new Exception(backupError.ToString());
+                }
+            }
+
+            if  (string.IsNullOrWhiteSpace(jsonString))
             {
                 throw new RequestFailureException("Invalid response from the server.");
             }

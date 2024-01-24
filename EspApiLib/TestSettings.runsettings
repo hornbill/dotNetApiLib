@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+	<!-- Configurations for data collectors -->
+	<DataCollectionRunSettings>
+		<DataCollectors>
+			<DataCollector friendlyName="Code Coverage" enabled="true">
+				<Configuration>
+					<CodeCoverage>
+						<!-- Customize code coverage by specifying assemblies -->
+					</CodeCoverage>
+				</Configuration>
+			</DataCollector>
+		</DataCollectors>
+	</DataCollectionRunSettings>
+
+	<!-- Configuration for test execution -->
+	<RunConfiguration>
+		<TargetFrameworkVersion>.NETFramework,Version=v4.8</TargetFrameworkVersion>
+		<MaxCpuCount>1</MaxCpuCount>
+		<!-- Path where the test results will be saved -->
+		<ResultsDirectory>.\TestResults</ResultsDirectory>
+		<!-- Specify platform (x86/x64) -->
+		<TargetPlatform>x64</TargetPlatform>
+	</RunConfiguration>
+
+	<!-- Other configurations can go here like Test timeouts, log files etc. -->
+</RunSettings>
